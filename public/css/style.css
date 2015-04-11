@@ -1,0 +1,189 @@
+.page-content
+{
+	text-align: center;
+	display:block;
+    width:100%;
+    padding:50px 10%;
+    height:600px;
+}
+ul.dropdown-menu-form {
+    padding: 5px 10px 0;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.dropdown-menu-form input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+.dropdown-menu-form li{
+
+	font-weight: bold;
+	margin-bottom:5px; 
+	margin-top:5px;
+}
+
+#savedcanvas{
+
+	width: 500px;
+	border:1px solid;
+	margin:auto;
+	margin-top:40px;
+}
+
+#savedcanvas ul{
+	width: 500px;
+}
+#savedcanvas p {
+	float:left;
+	margin-right: 200px;
+}
+
+#savedcanvas li{
+	text-align: right;
+	text-decoration: none;
+	list-style: none;
+	display: table-row;
+}
+
+#savedcanvas a {
+
+	margin-right:10px;
+}
+
+.dropdown-menu-form hr{
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+
+#collaborators {
+	float: left;
+	background-color: white;
+}
+#collaborators button {
+	background-color: white;
+}
+
+
+
+#mainpage{
+	border: 1px solid;
+	border-radius: 20px;
+	margin-top: 100px;
+	padding-bottom: 60px;
+}
+#mainpage a {
+
+	margin-left: 10px;
+	margin-top: 10px;	
+}
+
+#paintboard{
+	max-width: 910px;
+	margin-left:50px;
+	margin-right: 50px;
+}
+
+#optionbuttons
+{
+	margin-top:15px;
+	width:235px;
+}
+
+canvas 
+{
+	cursor: crosshair; /* url(../img/pencil.ico), auto; */
+	border-bottom: 1px solid rgba(0,0,0,0.3); 
+  	background-color: #FFF;
+  	box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8);
+}
+
+
+@media (max-width: 767px) {
+	canvas{
+		width:600px;
+		margin-left: -70px;
+	}
+}
+@media (min-width: 768px) {
+	canvas{
+		width:850px;
+		margin-left: -180px
+	}
+}
+@media (min-width: 977px) {
+	canvas{
+		width:900px;
+		margin-left:-30px;
+	}
+
+}
+
+
+.loginpage
+{
+	margin-top:50px;
+}
+
+.loginpage > form {
+margin-left: auto;
+margin-right: auto;
+}
+
+.showUsername
+{
+	display:block;
+	float: right;
+	margin-top: 15px;
+}
+#logoutbtn
+{
+	margin-left: 10px;
+}
+
+.errormsg
+{
+	color: red;
+	font-weight: bold;
+	margin-top: 10px;
+}
+#username {
+	margin-left: 4px;
+}
+
+#paintoptions
+{
+	list-style: none;
+	display: inline-flex;
+	width:380px;
+	padding-left:2px;
+}
+
+#paintoptions li
+{
+	margin-right: 2px;
+}
+.colorbtn
+{
+	width:30px;
+	height:30px;
+}
+.colorbtn.red{
+
+	background-color:red;
+}
+.colorbtn.black{
+
+	background-color:black;
+}
+.colorbtn.green{
+
+	background-color:green;
+}
+.colorbtn.eraser {
+	background: url('fonts/eraserbtn.jpg') no-repeat;
+	background-size: 30px;
+	border: none;
+}
+
+

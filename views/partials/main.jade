@@ -1,0 +1,17 @@
+div(class="col-md-12" id="mainpage")
+    h3
+      | Welcome to WhiteboardOnline
+    p The optimal tool for online web tutoring. 
+    div(ng-hide='useronline')
+        p Please choose a way you want to login
+        a(href='#/Login' class='btn btn-default')
+            span(class='fa fa-user') Local login
+        a(href='/auth/facebook' class='btn btn-primary')
+            span(class='fa fa-facebook') Facebook login
+    div(ng-show='useronline')
+        p You are currently logged in as : {{useronline}}
+        p Do you wish to log in with another user?
+        a(href='#/' ng-click='logout()') Log out    
+
+
+

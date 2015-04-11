@@ -1,0 +1,25 @@
+h3 Log in
+div(class="loginpage" ng-hide='useronline')
+    form(role='form' style='max-width: 400px;' ng-submit='login()') 
+      div.form-group
+        label(for='username') Username
+        input#exampleInputEmail1.form-control(type='name', placeholder='Enter email' ng-model="user.username")
+      div.form-group
+        label(for='password') Password
+        input#exampleInputPassword1.form-control(type='password', placeholder='Password' ng-model="user.password")
+      button.btn.btn-default(type='submit') Log in
+      p(ng-show='errormessage' class='errormsg')  {{errormessage}}
+      p 
+        b You don't have an account? 
+        br
+        a(href="#/signup") Create new account
+div(class='loginpage' ng-show='useronline')
+  h3 You are logged in as : {{useronline}}
+  p Do you want to log in with another user?
+  a(href='#' ng-click='logout()') Log out
+
+
+
+
+
+

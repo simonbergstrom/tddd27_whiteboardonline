@@ -1,0 +1,55 @@
+div(id='paintboard')
+    div(id='optionbuttons' class='btn-group')
+        button.btn.btn-default(type='button' value='clear' ng-click='paintoption($event)') Clear
+        button.btn.btn-default(type='button' ng-click='openExport()' ng-dialog-show-close="true") Save
+        div(class='btn-group')
+            form(role='form' ng-submit='inviteUsers(users)')   
+                button(type='button' ng-click='dropDown($event)' class='btn btn-default dropdown-toggle' data-toggle='dropdown')
+                    |Users online
+                    span(class='caret') 
+                ul(class='dropdown-menu dropdown-menu-form' role='menu')
+                    li(ng-repeat='user in users')
+                        div(class='input-group')
+                            input(type='checkbox' ng-model="checkBoxData.checked" ng-click='checkBox(user.name,checkBoxData.checked)' value="{{user.name}}")
+                            |{{user.name}}
+                    hr        
+                    li
+                        button(class='btn btn-default') Invite
+    ul(id="paintoptions")
+        li
+            | Stroke Size 
+            form
+                input(type='range' name='strokeSize' ng-model="strokeSize" ng-change='changeStrokeSize()' min='1' max='20' value='1')
+        li 
+            button(class='colorbtn eraser' value="eraser" ng-click='paintoption($event)')
+        li 
+            button(class='colorbtn black' value="black" ng-click='paintoption($event)') 
+        li 
+            button(class='colorbtn red' value="red" ng-click='paintoption($event)') 
+        li 
+            button(class='colorbtn green' value="green" ng-click='paintoption($event)')
+        li
+            button(class='btn btn-danger' ng-click='leaveRoom()' ng-show='room') Leave Room                       
+    canvas(id="canvas" keep-alive='true' width='910px' height='600px' ng-mousedown="onMouseDown($event)" ng-mousemove="onMouseDrag($event)" ng-mouseup="onMouseUp()")
+    script(type='text/ng-template' id='exportDialog')
+        div(class='ngdialog-message')
+            h3 Save you drawing
+            label(for='canvas') Select a name for your drawing
+            form(role='form' style='max-width: 400px;' ng-submit="save()")
+                input#savecanvas.form-control(type='name', placeholder='Name' ng-model='canvas.name')
+                button.btn.btn-default(type='submit') Save
+                p(ng-show='errormessage' class='errormsg') {{errormessage}}
+    script(type='text/ng-template' id='clearDialog')    
+        div(class='ngdialog-message')
+            h3 Clear your drawing
+            label(for='canvas') Are you sure you want to clear? 
+            button.btn.btn-default(type='button' value='Yes' ng-click='clearoption()') Yes
+            button.btn.btn-default(type='button' value='No' ng-click='closeThisDialog()') No      
+    script(type='text/ng-template' id='inviteDialog')    
+        div(class='ngdialog-message')
+            h3 You are invited to a drawboard! 
+            label(for='canvas') Do you want to join? 
+            button.btn.btn-default(type='button' value='Yes' ng-click='roomChoice($event)') Yes
+            button.btn.btn-default(type='button' value='No' ng-click='roomChoice($event)') No      
+
+

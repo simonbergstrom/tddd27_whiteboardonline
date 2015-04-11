@@ -1,0 +1,26 @@
+h3 Profile page
+p Name : {{useronline}}
+div(id='savedcanvas')
+    h4 Saved boards:
+
+    ul
+        li 
+            p
+                b Name: 
+        li(ng-repeat='drawing in canvas')
+            p {{drawing.name}}
+            a(href='#/profile' ng-click='loadCanvas(drawing)') load into canvas
+            a(href='#/profile' ng-click='deleteCanvas(drawing)') delete
+
+script(type='text/ng-template' id='loadCanvasDialog')    
+        div(class='ngdialog-message')
+            h3 Load Canvas 
+            label(for='canvas') Are you sure you want to load this canvas? If you have a unsaved drawing loaded, it will be lost.  
+            button.btn.btn-default(type='button' value='Yes' ng-click='loadthisCanvas(value)') Yes
+            button.btn.btn-default(type='button' value='No' ng-click='closeThisDialog()') No   
+script(type='text/ng-template' id='deleteCanvasDialog')    
+        div(class='ngdialog-message')
+            h3 Delete Canvas 
+            label(for='canvas') Are you sure you want to delete this drawing? 
+            button.btn.btn-default(type='button' value='Yes' ng-click='deleteThisCanvas(value)') Yes
+            button.btn.btn-default(type='button' value='No' ng-click='closeThisDialog()') No   

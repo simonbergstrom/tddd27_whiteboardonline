@@ -1,0 +1,11 @@
+h3 Create a user account
+div(class="loginpage")
+    form(role='form' style='max-width: 400px;' ng-submit="signup()")
+      div.form-group
+        label(for='username') Username
+        input#exampleInputEmail1.form-control(type='name', placeholder='Enter email' ng-model="user.username")
+      div.form-group
+        label(for='password') Password
+        input#exampleInputPassword1.form-control(type='password', placeholder='Password' ng-model="user.password")
+      button.btn.btn-default(type='submit') Create user
+      p(ng-show='errormessage' class='errormsg')  {{errormessage}}
